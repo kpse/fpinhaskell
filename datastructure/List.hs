@@ -29,9 +29,79 @@ init1 (x:xs) = x : init1 xs
 product1 :: Num a => [a] -> a
 product1 = foldl (*) 1
 
--- 3.8
+-- 3.9
 length1 :: [a] -> Int
 length1 = foldr (\_ n -> n + 1) 0
+
+-- 3.10
+foldLeft :: [a] -> b -> (b -> a -> b) -> b
+foldLeft [] acc f = acc
+foldLeft (x:xs) acc f = foldLeft xs (f acc x) f
+
+-- 3.11
+sumFoldLeft :: Num a => [a] -> a
+sumFoldLeft xs = foldLeft xs 0 (+)
+
+productFoldLeft :: Num a => [a] -> a
+productFoldLeft xs = foldLeft xs 1 (*)
+
+lengthFoldLeft :: [a] -> Int
+lengthFoldLeft xs = foldLeft xs 0 (\n _ -> n + 1)
+
+-- 3.12
+reverseFold :: [a] -> [a]
+reverseFold = foldl (flip (:)) []
+
+-- 3.13
+--foldRight :: [a] -> b -> (a -> b -> b) -> b
+--foldRight xs acc f =
+
+-- 3.14
+--appendFold ::
+
+-- 3.15
+concatFold :: [[a]] -> [a]
+concatFold = foldl (++) []
+
+-- 3.16
+addOne :: Num a => [a] -> [a]
+addOne = fmap (+1)
+-- or
+addOne1 :: Num a => [a] -> [a]
+addOne1 [] = []
+addOne1 (x:xs) = x + 1 : addOne1 xs
+
+-- 3.17
+doubleToString :: (Num a, Show a) => [a] -> [String]
+doubleToString = fmap show
+
+-- 3.18
+map1 :: (a -> b) -> [a] -> [b]
+map1 f (x:xs) = f x : map1 f xs
+
+-- 3.19
+filter1 :: (a -> Bool) -> [a] -> [a]
+filter1 p [] = []
+filter1 p (x:xs) = if p x then x : filter1 p xs else filter1 p xs
+
+-- 3.20
+flatMap :: (a -> [b]) -> [a] -> [b]
+flatMap f ls = concat $ map f ls
+
+-- 3.21
+-- User flatMap to implement filter
+--filterFlatMap :: (a -> Bool) -> [a] -> [a]
+--filterFlatMap f xs = flatMap f xs
+
+-- 3.22
+combine :: Num a => [a] -> [a] -> [a]
+combine [] x = x
+combine x [] = x
+combine (x:xs) (y:ys) = x + y : combine xs ys
+
+-- 3.23
+zipWith1 :: (a -> b -> c) -> [a] -> [b] -> [c]
+zipWith1 f (x:xs) (y:ys) = f x y : zipWith1 f xs ys
 
 -- 3.24
 -- Solution 1 TODO implement filterM myself
@@ -48,12 +118,3 @@ hasSubsequence1 [] _ = False
 hasSubsequence1 (x:xs) (y:ys)
   | x == y = True && hasSubsequence1 xs ys
   | otherwise = hasSubsequence1 xs (y:ys)
-
-filter1 :: (a -> Bool) -> [a] -> [a]
-filter1 p [] = []
-filter1 p (x:xs) = if p x then x : filter1 p xs else filter1 p xs
-
-flatMap :: (a -> [b]) -> [a] -> [b]
-flatMap = concatMap
-
---filter2 :: (a -> Bool) -> [a] -> [a]
