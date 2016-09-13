@@ -31,16 +31,17 @@ product1 = foldl (*) 1
 
 -- 3.8
 length1 :: [a] -> Int
-length1 = foldr (+1) 0
+length1 = foldr (\_ n -> n + 1) 0
 
 -- 3.24
+-- Solution 1 TODO implement filterM myself
 hasSubsequence :: Eq a => [a] -> [a] -> Bool
 hasSubsequence sup sub = sub `elem` subsequences sup
 
--- TODO implement filterM myself
 subsequences :: [a] -> [[a]]
 subsequences = filterM (const [True, False])
 
+-- Solution 2
 hasSubsequence1 :: Eq a => [a] -> [a] -> Bool
 hasSubsequence1 _ [] = True
 hasSubsequence1 [] _ = False
@@ -53,6 +54,6 @@ filter1 p [] = []
 filter1 p (x:xs) = if p x then x : filter1 p xs else filter1 p xs
 
 flatMap :: (a -> [b]) -> [a] -> [b]
-flatMap = concat $ fmap
+flatMap = concatMap
 
 --filter2 :: (a -> Bool) -> [a] -> [a]
