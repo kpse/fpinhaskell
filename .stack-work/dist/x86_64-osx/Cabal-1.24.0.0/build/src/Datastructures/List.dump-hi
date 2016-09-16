@@ -1,0 +1,60 @@
+
+==================== FINAL INTERFACE ====================
+2016-09-16 08:30:44.04598 UTC
+
+interface fpinhaskell-0.1.0.0-CxMX2dANF9I8SM5rbSJA9c:Datastructures.List 8001
+  interface hash: 8d48b0aa63959be8de20904fd428eaad
+  ABI hash: 995ba275ba959f9db2358d43a24c1bb1
+  export-list hash: 243f871d62028d7370cc1ae31526c30e
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 298b5c847aae44cc89c69c51b327cbd9
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Datastructures.List.tail1
+module dependencies:
+package dependencies: base-4.9.0.0* ghc-prim-0.5.0.0
+                      integer-gmp-1.0.0.1
+orphans: base-4.9.0.0:GHC.Base base-4.9.0.0:GHC.Float
+family instance modules: base-4.9.0.0:Control.Applicative
+                         base-4.9.0.0:Data.Either base-4.9.0.0:Data.Functor.Const
+                         base-4.9.0.0:Data.Monoid base-4.9.0.0:Data.Type.Equality
+                         base-4.9.0.0:GHC.Generics base-4.9.0.0:GHC.IO.Exception
+                         base-4.9.0.0:GHC.TypeLits
+import  -/  base-4.9.0.0:Control.Monad 7767aebfd53f0b584cef2fe66ad3986c
+import  -/  base-4.9.0.0:Data.Foldable 8aeb682f6c74f97fcf0ace0d608a43ea
+import  -/  base-4.9.0.0:GHC.Base 8ed3be81c0707b322f975a84ae1bb816
+import  -/  base-4.9.0.0:GHC.Num 48f506a8f4ecf06285d0a0706594dcc0
+import  -/  base-4.9.0.0:GHC.Show 952347a6ab730bcb25c0854d8bc6ca51
+import  -/  base-4.9.0.0:Prelude b9bddb97799837fe67a8d00939a5b6c3
+import  -/  ghc-prim-0.5.0.0:GHC.Classes 0bdf3d057a415ec1b84a7b1994efbe47
+72bd42faf304e1b069c2344a391d714b
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   Datastructures.List.$trModule2
+                   Datastructures.List.$trModule1) -}
+96bb654fb5aaeb4102c4a3cd9a402177
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Datastructures.List"#) -}
+8f0681c7a28302e69c05952f140b4ffd
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS
+                   "fpinhaskell-0.1.0.0-CxMX2dANF9I8SM5rbSJA9c"#) -}
+961e1f6b83468e7e31dbc4f12500325b
+  tail1 :: [a] -> [a]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ a (ds :: [a]) ->
+                 case ds of wild { [] -> GHC.Types.[] @ a : x xs -> xs }) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+
