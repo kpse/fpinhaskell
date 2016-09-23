@@ -1,4 +1,4 @@
-module Datastructures.List (tail1) where
+module Datastructures.List where
 
 import Control.Monad
 
