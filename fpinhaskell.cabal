@@ -2,12 +2,11 @@ name:                fpinhaskell
 version:             0.1.0.0
 synopsis:            Haskell exercises from the red book Functional Programming in Scala
 description:         Please see README.md
-homepage:            https://github.com/bjing/fpinhaskell.git
+homepage:            https://github.com/MYOB-Technology/fpinhaskell.git
 license:             BSD3
 license-file:        LICENSE
 author:              Brian Jing
-maintainer:          brian.jing@myob.com
-copyright:           2016 Brian Jing
+maintainer:          Brian Jing
 category:            Web
 build-type:          Simple
 -- extra-source-files:
@@ -40,4 +39,4 @@ test-suite fpinhaskell-test
 
 source-repository head
   type:     git
-  location: https://github.com/bjing/fpinhaskell.git
+  location: https://github.com/MYOB-Technology/fpinhaskell.git
