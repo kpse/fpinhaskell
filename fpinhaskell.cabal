@@ -1,11 +1,11 @@
 name:                fpinhaskell
 version:             0.1.0.0
-synopsis:            Initial project template from stack, using hspec and quickcheck
+synopsis:            Haskell exercises from the red book Functional Programming in Scala
 description:         Please see README.md
-homepage:            https://github.com/githubuser/fpinhaskell#readme
+homepage:            https://github.com/bjing/fpinhaskell.git
 license:             BSD3
 license-file:        LICENSE
-author:              Author name here
+author:              Brian Jing
 maintainer:          brian.jing@myob.com
 copyright:           2016 Brian Jing
 category:            Web
@@ -15,8 +15,7 @@ cabal-version:       >=1.10
 
 library
   hs-source-dirs:      src
-  exposed-modules:     Data.String.Strip
-                     , Datastructures.List
+  exposed-modules:     Datastructures.List
   build-depends:       base >= 4.7 && < 5
   default-language:    Haskell2010
 
@@ -41,4 +40,4 @@ test-suite fpinhaskell-test
 
 source-repository head
   type:     git
-  location: https://github.com/githubuser/fpinhaskell
+  location: https://github.com/bjing/fpinhaskell.git
